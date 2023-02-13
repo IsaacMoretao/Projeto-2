@@ -1,10 +1,10 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
-import { knex as setupKnex, Knex } from 'knex'
+import { Knex, knex as setupKnex } from 'knex'
 import { env } from './env'
 
 export const config: Knex.Config = {
-  client: 'sqlite',
+  client: env.DATABASE_CLIENT,
   connection: {
     filename: env.DATABASE_URL,
   },
